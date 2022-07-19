@@ -1,0 +1,2 @@
+//O operador de coalescência nula (??) é um operador lógico que retorna o seu operando do lado direito quando o seu operador do lado esquerdo é null ou undefined.
+export const BASE_URL = import.meta.env.VITE_BACKEND_URL ?? "http://localhost:8080";
