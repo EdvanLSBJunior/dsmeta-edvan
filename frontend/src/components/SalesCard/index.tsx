@@ -2,7 +2,8 @@ import NotificationButton from "../NotificationButton";
 import "./styles.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function SalesCard() {
   //Macete para setar data de 1 ano atrás, pegando a data atual e subtraindo 365 dias
@@ -11,6 +12,15 @@ function SalesCard() {
 
   const [minDate, setMinDate] = useState(min);
   const [maxDate, setMaxDate] = useState(max);
+
+  useEffect(() => {
+    axios.get("https://dsmeta-edvan.herokuapp.com/sales")
+    .then(response => {
+      console.log(response.data);
+      
+    })
+  }, []);
+
   return (
     <>
       <div className="dsmeta-card">
